@@ -7,6 +7,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
@@ -17,7 +19,7 @@ import javafx.scene.Scene;
 import javax.swing.*;
 
 public class LoginController {
-    @FXML Button UserLog;
+    @FXML TextField UserLog;
     @FXML Button LoginBtn;
 
     @FXML
@@ -32,7 +34,18 @@ public class LoginController {
             //Open user album list with stock photos in album
         }
         else if(UserLog.getText().equals("admin")){
-            //Open Admin subsystem
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/View/AdminSubSystem.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Admin Sub-System");
+            stage.setScene(scene);
+            stage.show();
+            ((Node)(e.getSource())).getScene().getWindow().hide();
         }
         else{
 
