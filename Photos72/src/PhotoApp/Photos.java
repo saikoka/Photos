@@ -16,19 +16,12 @@ public class Photos extends Application {
         Parent root = loader.load();
 
         LoginController listController = loader.getController();
-        //listController.start(primaryStage);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Song Library");
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        /*Parent root = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
-
-
-        primaryStage.setTitle("Login");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
     }
 
 

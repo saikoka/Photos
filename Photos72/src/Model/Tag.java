@@ -1,11 +1,19 @@
 package Model;
 
 public class Tag {
-    String name;
-    String value;
+    private String name;
+    private String value;
 
     public Tag(String name, String value){
         this.name=name;
         this.value=value;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getValue(){
+        return value;
     }
 }

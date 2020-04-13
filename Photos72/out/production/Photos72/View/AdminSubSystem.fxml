@@ -8,19 +8,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminSubSystemController">
    <children>
-      <ListView layoutX="-3.0" layoutY="40.0" prefHeight="437.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="443.0" AnchorPane.topAnchor="40.0" />
+      <ListView fx:id="ListUser" layoutX="-3.0" layoutY="40.0" prefHeight="437.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="443.0" AnchorPane.topAnchor="40.0" />
       <Text layoutX="74.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Users List" wrappingWidth="58.13671875" />
-      <TextField layoutX="267.0" layoutY="116.0" promptText="Username for creation" />
-      <Button layoutX="519.0" layoutY="116.0" mnemonicParsing="false" text="Create User" />
-      <Button layoutX="519.0" layoutY="321.0" mnemonicParsing="false" text="Delete User" />
-      <Button layoutX="474.0" layoutY="436.0" mnemonicParsing="false" text="Logout" />
+      <TextField fx:id="creation" layoutX="267.0" layoutY="116.0" promptText="Username for creation" />
+      <Button fx:id="Create" layoutX="519.0" layoutY="116.0" mnemonicParsing="false" onAction="#createUser" text="Create User" />
+      <Button fx:id="Delete" layoutX="519.0" layoutY="321.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete User" />
+      <Button fx:id="Logout" layoutX="474.0" layoutY="436.0" mnemonicParsing="false" text="Logout" />
       <Button layoutX="572.0" layoutY="436.0" mnemonicParsing="false" text="Safe Quit" />
       <Line endX="271.0" endY="-0.5" layoutX="386.0" layoutY="239.0" startX="-172.0" startY="-0.5" />
       <Text layoutX="397.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User" />
       <Text layoutX="397.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete User" />
-      <TextField layoutX="267.0" layoutY="321.0" promptText="Username for deletion" />
+      <TextField fx:id="deletion" layoutX="267.0" layoutY="321.0" promptText="Username for deletion" />
       <Line endX="620.0" layoutX="-405.0" layoutY="40.0" startX="1062.0" AnchorPane.leftAnchor="214.5" AnchorPane.rightAnchor="406.5" />
       <Text layoutX="366.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin System">
          <font>
