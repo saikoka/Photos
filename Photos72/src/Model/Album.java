@@ -19,7 +19,6 @@ public class Album implements Comparable<Album>{
     }
 
 
-
     public void addPhoto(Photo x){
         photoList.add(x);
     }

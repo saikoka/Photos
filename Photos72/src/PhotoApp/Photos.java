@@ -18,7 +18,7 @@ public class Photos extends Application {
         LoginController listController = loader.getController();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Song Library");
+        primaryStage.setTitle("Login");
         primaryStage.setResizable(false);
         primaryStage.show();
 

@@ -12,37 +12,41 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <ListView layoutX="220.0" layoutY="37.0" prefHeight="358.0" prefWidth="200.0" />
+            <ListView fx:id="AlbumView" layoutX="220.0" layoutY="37.0" prefHeight="358.0" prefWidth="200.0" />
             <Text layoutX="255.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Album List" textAlignment="CENTER" wrappingWidth="129.8837890625">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <TextField layoutX="33.0" layoutY="69.0" promptText="new album name" />
+            <TextField fx:id="NewAlbum" layoutX="33.0" layoutY="69.0" promptText="new album name" />
             <Text layoutX="42.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Album" textAlignment="CENTER" wrappingWidth="142.0" />
-            <Button layoutX="79.0" layoutY="108.0" mnemonicParsing="false" text="+ CREATE" textFill="#0e12da">
+            <Button fx:id="Create" layoutX="79.0" layoutY="108.0" mnemonicParsing="false" onAction="#createAlbum" text="+ CREATE" textFill="#0e12da">
                <font>
                   <Font name="Rockwell" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="79.0" layoutY="303.0" mnemonicParsing="false" text="X DELETE" textFill="#dd1010">
+            <Button fx:id="Delete" layoutX="82.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteAlbum" text="X DELETE" textFill="#dd1010">
                <font>
                   <Font name="Calibri Bold Italic" size="13.0" />
                </font>
             </Button>
-            <TextField layoutX="40.0" layoutY="269.0" promptText="album for deletion" />
-            <Text layoutX="76.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Album" />
-            <Button layoutX="431.0" layoutY="56.0" mnemonicParsing="false" text="Open Album" />
-            <Button layoutX="479.0" layoutY="351.0" mnemonicParsing="false" text="Tag Search" />
+            <TextField fx:id="DeleteAlbum" layoutX="42.0" layoutY="309.0" promptText="album for deletion" />
+            <Text layoutX="80.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Album" />
+            <Button fx:id="OpenAlbum" layoutX="431.0" layoutY="56.0" mnemonicParsing="false" onAction="#openAlbum" text="Open Album" />
+            <Button fx:id="TagSearch" layoutX="479.0" layoutY="351.0" mnemonicParsing="false" text="Tag Search" />
             <Text layoutX="431.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="select album from list" />
-            <TextField layoutX="438.0" layoutY="269.0" promptText="type=value" />
-            <TextField layoutX="439.0" layoutY="309.0" promptText="AND/OR type=value" />
-            <Button layoutX="476.0" layoutY="187.0" mnemonicParsing="false" text="Date Search" />
-            <TextField layoutX="438.0" layoutY="143.0" promptText="enter a date range" />
+            <TextField fx:id="SearchType" layoutX="438.0" layoutY="269.0" promptText="type=value" />
+            <TextField fx:id="SearchValue" layoutX="439.0" layoutY="309.0" promptText="AND/OR type=value" />
+            <Button fx:id="DateSearch" layoutX="476.0" layoutY="187.0" mnemonicParsing="false" text="Date Search" />
+            <TextField fx:id="SearchDate" layoutX="438.0" layoutY="143.0" promptText="enter a date range" />
             <Text layoutX="445.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search For Photos By Date" />
             <Text layoutX="445.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search For Photos By Tag(s)" />
             <Button layoutX="15.0" layoutY="9.0" mnemonicParsing="false" text="logout" />
             <Button layoutX="545.0" layoutY="6.0" mnemonicParsing="false" text="save and quit" />
+            <TextField fx:id="CurrentAlbum" layoutX="38.0" layoutY="169.0" promptText="Current Album Name" />
+            <TextField fx:id="RenameAlbum" layoutX="38.0" layoutY="204.0" promptText="New Album Name" />
+            <Text layoutX="75.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rename Album" />
+            <Button fx:id="Rename" layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#renameAlbum" text="- RENAME" textFill="#31b543" />
          </children>
     </AnchorPane>
   </children>

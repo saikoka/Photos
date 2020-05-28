@@ -26,12 +26,15 @@ public class UalController {
     @FXML TextField SearchDate;
     @FXML TextField SearchType;
     @FXML TextField SearchValue;
+    @FXML TextField CurrentAlbum;
+    @FXML TextField RenameAlbum;
     @FXML ListView<Album> AlbumView;
     @FXML Button Create;
     @FXML Button Delete;
     @FXML Button OpenAlbum;
     @FXML Button DateSearch;
     @FXML Button TagSearch;
+    @FXML Button Rename;
     public static User currUser;
 
     @FXML
@@ -66,7 +69,43 @@ public class UalController {
 
     @FXML
     public void renameAlbum(ActionEvent e ) throws IOException{
-
+            if(CurrentAlbum.getText().isEmpty() || RenameAlbum.getText().isEmpty()){
+                Alert err = new Alert(Alert.AlertType.ERROR);
+                err.setTitle("ERROR");
+                err.setContentText("Current and/or New Album name field empty.");
+                err.showAndWait();
+            }
+            else if(!currUser.findAlbum(CurrentAlbum.getText()) || currUser.findAlbum(RenameAlbum.getText())){
+                if(!currUser.findAlbum(CurrentAlbum.getText()) && currUser.findAlbum(RenameAlbum.getText())){
+                    Alert err = new Alert(Alert.AlertType.ERROR);
+                    err.setTitle("ERROR");
+                    err.setContentText("Current Album does not exist and can't rename to an album name that already exists.");
+                    err.showAndWait();
+                }
+                else if(!currUser.findAlbum(CurrentAlbum.getText())){
+                    Alert err = new Alert(Alert.AlertType.ERROR);
+                    err.setTitle("ERROR");
+                    err.setContentText("Current Album does not exist.");
+                    err.showAndWait();
+                }
+                else{
+                    Alert err = new Alert(Alert.AlertType.ERROR);
+                    err.setTitle("ERROR");
+                    err.setContentText("Can't rename to album that already exists.");
+                    err.showAndWait();
+                }
+            }
+            else{
+                List<Album> temp = currUser.getAlbumList();
+                for(Album x : temp){
+                    if(x.getAlbumName().equals(CurrentAlbum.getText())){
+                        x.setAlbumName(RenameAlbum.getText());
+                    }
+                }
+                Collections.sort(temp);
+                currUser.setAlbumList(temp);
+                AlbumView.getItems().setAll(currUser.getAlbumList());
+            }
     }
 
     @FXML
@@ -95,14 +134,14 @@ public class UalController {
 
     @FXML
     public void openAlbum(ActionEvent e ) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/View/OpAlb.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        FXMLLoader xd = new FXMLLoader();
+        xd.setLocation(getClass().getResource("/View/OpAlb.fxml"));
+        Scene scene = new Scene(xd.load());
         Stage stage = new Stage();
         stage.setTitle("Open Album");
         stage.setScene(scene);
         stage.show();
-        ((Node) (e.getSource())).getScene().getWindow().hide();
+        //((Node) (e.getSource())).getScene().getWindow().hide();
 
     }
 
